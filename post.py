@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import os
 import random
 from utils import post_to_mastodon, post_to_twitter, download_file, get_csv_column_values
 
@@ -27,3 +28,6 @@ if POST_TO_MASTODON:
 
 if POST_TO_TWITTER:
     post_to_twitter(post_content)
+
+if os.path.exists(filename):
+    os.remove(filename)
